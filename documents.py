@@ -1,3 +1,20 @@
+import streamlit as st
+from google.oauth2 import service_account
+
+Student_data = "https://docs.google.com/spreadsheets/d/1lyQExfwjbRM24CBJDxEfmEqt2Ah49CYs4_eFsiIX5KE/edit?usp=sharing"
+company_data = "https://docs.google.com/spreadsheets/d/14OWSWzvDppYTZR47yydXl5QXQfjMu400HFoOP3I-Imk/edit?usp=sharing"
+company_req_data = "https://docs.google.com/spreadsheets/d/1nK-VwPIwqxKBFEb5aFlYCVtVRwmuZfSy9tY4dPs_Cco/edit?usp=sharing"
+
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
+crediential = service_account.Credentials.from_service_account_info(st.secrets['gcp_service_account'],scopes = scope)
+
+dataset_urls = {
+    'Student Details': Student_data,
+    'Company Details': company_data,
+    'Company Requirements': company_req_data
+}
+
 Business_understanding = """
     - **Context**: Companies across various industries require skilled professionals to adapt to changing technologies and business landscapes. These companies often seek training and resources to enhance their workforce capabilities.
     ARICH serves as a training provider, facilitating companies in understanding the types of training and courses available. This collaboration is essential for matching companies’ training demands with their resource capabilities.
