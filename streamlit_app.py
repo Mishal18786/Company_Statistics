@@ -16,7 +16,11 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
 
-st.title("Comapany Stats")
+st.markdown(
+    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">',
+    unsafe_allow_html=True
+)
+st.markdown("<h1><i class='fas fa-chart-line'></i> Company Stats</h1>", unsafe_allow_html=True)
 
 Data_selector = st.sidebar.selectbox(
     'Select a Data set to be viewed -->',
